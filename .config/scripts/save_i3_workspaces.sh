@@ -1,0 +1,10 @@
+i3-save-tree --workspace 1 | sed -r 's|^(\s+)// "|\1  "|g' > ~/.config/i3/workspace-1.json
+i3-save-tree --workspace 2 | sed -r 's|^(\s+)// "|\1  "|g' > ~/.config/i3/workspace-2.json
+i3-save-tree --workspace 3 | sed -r 's|^(\s+)// "|\1  "|g' > ~/.config/i3/workspace-3.json
+i3-save-tree --workspace 4 | sed -r 's|^(\s+)// "|\1  "|g' > ~/.config/i3/workspace-4.json
+i3-save-tree --workspace 5 | sed -r 's|^(\s+)// "|\1  "|g' > ~/.config/i3/workspace-5.json
+i3-save-tree --workspace 6 | sed -r 's|^(\s+)// "|\1  "|g' > ~/.config/i3/workspace-6.json
+i3-save-tree --workspace 7 | sed -r 's|^(\s+)// "|\1  "|g' > ~/.config/i3/workspace-7.json
+i3-save-tree --workspace 8 | sed -r 's|^(\s+)// "|\1  "|g' > ~/.config/i3/workspace-8.json
+i3-save-tree --workspace 9 | sed -r 's|^(\s+)// "|\1  "|g' > ~/.config/i3/workspace-9.json
+i3-save-tree --workspace 10 | sed -r 's|^(\s+)// "|\1  "|g' > ~/.config/i3/workspace-10.json
