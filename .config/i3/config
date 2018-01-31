@@ -310,7 +310,7 @@ exec --no-startup-id "i3-msg '[workspace=6] move workspace to output DP-0'"
 exec_always --no-startup-id nm-applet
 exec_always --no-startup-id nitrogen --restore
 
-exec --no-startup-id compton -b
+exec --no-startup-id compton --config ~/.config/compton/config -b
 exec --no-startup-id steam
 exec --no-startup-id termite -t "irssi" -e "tmux -u new-session -A -s irssi"
 exec --no-startup-id google-chrome-stable
