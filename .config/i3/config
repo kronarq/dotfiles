@@ -277,9 +277,33 @@ bindsym $mod+Shift+m exec killall mmr_loop.sh
 #bindsym $mod+n exec i3lock-fancy
 bindsym $mod+n exec dm-tool lock 
 
+# scrot - all
+bindsym Print exec scrot ~/Images/sc/scrot-$(date +%F-%I-%M-%S-{$RANDOM}).png -q 100
+# scrot - selection
+bindsym Mod1+Print exec scrot -s ~/Images/sc/scrot-$(date +%F-%I-%M-%S-{$RANDOM}).png -q 100
+
 exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec_always --no-startup-id nm-applet
 
 new_window pixel 2
+
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="popup"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="Preferences"] floating enable
+for_window [window_type="dialog"] floating enable
+for_window [window_type="menu"] floating enable
+
+for_window [class="(?i)gsimplecal"] floating enable, move position mouse
+for_window [class="(?i)qemu-system"] floating enable
+for_window [class="(?i)VirtualBox" title="(?i)Manager"] floating enable
+
+for_window [instance="__scratchpad"] floating enable
+for_window [instance="__nmtui"] floating enable
+
+for_window [class="(?i)pavucontrol"] floating enable, move position mouse
+for_window [class="(?i)pavucontrol" instance="pavucontrol-bar"] move down 34px
 
 exec --no-startup-id "i3-msg 'workspace 1; append_layout ~/.config/i3/workspace-1.json'"
 exec --no-startup-id "i3-msg 'workspace 2; append_layout ~/.config/i3/workspace-2.json'"
@@ -307,7 +331,6 @@ exec --no-startup-id "i3-msg '[workspace=8] move workspace to output HDMI-0'"
 exec --no-startup-id "i3-msg '[workspace=5] move workspace to output DP-0'"
 exec --no-startup-id "i3-msg '[workspace=6] move workspace to output DP-0'"
 
-exec_always --no-startup-id nm-applet
 exec_always --no-startup-id nitrogen --restore
 
 exec --no-startup-id compton --config ~/.config/compton/config -b
@@ -324,3 +347,6 @@ exec --no-startup-id termite -t "termite-ws5"
 exec --no-startup-id termite -t "termite-ws6"
 exec --no-startup-id termite -t "termite-ws9"
 exec --no-startup-id termite -t "termite-ws10"
+exec --no-startup-id solaar
+
+

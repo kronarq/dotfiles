@@ -40,7 +40,7 @@ COMPLETION_WAITING_DOTS="true"
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # HIST_STAMPS="mm/dd/yyyy"
 
-#plugins=(archlinux docker git jsontools pip python systemd)
+plugins=(archlinux docker git jsontools pip python systemd zsh-autosuggestions zsh-syntax-highlighting history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -53,6 +53,10 @@ export PATH="$HOME/.config/scripts:$HOME/.bin:$PATH"
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -74,6 +78,12 @@ export VISUAL='vim'
 export BROWSER='google-chrome-stable'
 
 export QT_QPA_PLATFORMTHEME="qgnomeplatform"
+#export QT_QPA_PLATFORMTHEME="qt5ct"
+
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+
 
 alias ssh='TERM=xterm-256color ssh'
 alias tmux='TERM=xterm-256color tmux -u'
@@ -85,6 +95,7 @@ alias vconf-termite='vim ~/.config/termite/config'
 alias vconf-polybar='vim ~/.config/polybar/config'
 alias vconf-zsh='vim ~/.zshrc'
 
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 # cd up to n dirs
 # using:  cd.. 10   cd.. dir
@@ -100,5 +111,4 @@ function cd_up() {
 }
 
 alias 'cd..'='cd_up'                                # can not name function 'cd..'
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
