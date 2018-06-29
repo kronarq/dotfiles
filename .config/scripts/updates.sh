@@ -1,5 +1,5 @@
 #!/bin/bash
-pac=$(checkupdates-aur | wc -l)
+pac=$(checkupdates | wc -l)
 aur=$(cower -u | wc -l)
 
 check=$((pac + aur))
