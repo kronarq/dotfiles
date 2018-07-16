@@ -1,0 +1,3 @@
+[submodule ".config/scripts/utfweather"]
+	path = .config/scripts/utfweather
+	url = git@github.com:kronarq/utfweather.git
