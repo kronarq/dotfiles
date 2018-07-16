@@ -274,12 +274,13 @@ scroll-down = ~/.config/scripts/volume.sh --down
 
 [module/weather]
 type = custom/script
-interval = 3600
+interval = 1
 format = <label>
 #format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-padding = 1
-exec = ~/.config/scripts/weather2.py
+exec = ~/.config/scripts/utfweather.py
+click-left = ~/.config/scripts/utfweather.py --toggle-forecast
 
 [module/cpu_freq]
 type = custom/script
