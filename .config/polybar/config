@@ -280,7 +280,7 @@ format = <label>
 format-prefix-foreground = ${colors.foreground-alt}
 format-padding = 1
 exec = ~/.config/scripts/utfweather/utfweather.py
-click-left = ~/.config/scripts/utfweather.py --toggle-forecast
+click-left = ~/.config/scripts/utfweather/utfweather.py --toggle-forecast
 
 [module/cpu_freq]
 type = custom/script
