@@ -338,7 +338,7 @@ exec --no-startup-id steam
 exec --no-startup-id termite -t "irssi" -e "tmux -u new-session -A -s irssi"
 exec --no-startup-id google-chrome-stable
 exec --no-startup-id slack
-exec --no-startup-id hipchat4
+exec --no-startup-id discord
 exec --no-startup-id telegram-desktop
 exec --no-startup-id termite -t "htop" -e htop
 exec --no-startup-id termite -t "termite-ws2"
