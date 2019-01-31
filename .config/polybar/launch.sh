@@ -18,6 +18,6 @@ echo "Launching polybar..."
 polybar -q -r main &
 polybar -q -r left &
 polybar -q -r right &
-polybar -q -r top &
+#polybar -q -r top &
 
 echo "Bars launched..."

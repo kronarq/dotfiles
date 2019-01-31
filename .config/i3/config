@@ -191,6 +191,11 @@ mode "movews" {
 
 bindsym $mod+z mode "movews"
 
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -278,12 +283,16 @@ bindsym $mod+Shift+m exec killall mmr_loop.sh
 bindsym $mod+n exec dm-tool lock 
 
 # scrot - all
-bindsym Print exec scrot ~/Images/sc/scrot-$(date +%F-%I-%M-%S-{$RANDOM}).png -q 100
+bindsym --release Print exec scrot ~/Images/sc/screenshot_$(date +%F_%I.%M.%S).png -q 100
 # scrot - selection
-bindsym Mod1+Print exec scrot -s ~/Images/sc/scrot-$(date +%F-%I-%M-%S-{$RANDOM}).png -q 100
+bindsym --release $mod+Print exec scrot -s ~/Images/sc/screenshot_$(date +%F_%I.%M.%S).png -q 100
+
+bindsym --release $mod+Shift+Print exec scrot -s ~/Work/screenshots/screenshot_$(date +%F_%I.%M.%S).png -q 100
 
 exec_always --no-startup-id ~/.config/polybar/launch.sh
-exec_always --no-startup-id nm-applet
+exec_always --no-startup-id killall stalonetray; sleep 1; stalonetray
+exec_always --no-startup-id killall nm-applet; sleep 1; nm-applet
+exec_always --no-startup-id killall compton; sleep 1; compton --config ~/.config/compton/config -b
 
 new_window pixel 2
 
@@ -333,13 +342,12 @@ exec --no-startup-id "i3-msg '[workspace=6] move workspace to output DP-0'"
 
 exec_always --no-startup-id nitrogen --restore
 
-exec --no-startup-id compton --config ~/.config/compton/config -b
 exec --no-startup-id steam
 exec --no-startup-id termite -t "irssi" -e "tmux -u new-session -A -s irssi"
+exec --no-startup-id termite -t "MainMux" -e "tmux -u new-session -A -s MainMux"
 exec --no-startup-id google-chrome-stable
 exec --no-startup-id slack
 exec --no-startup-id discord
-exec --no-startup-id telegram-desktop
 exec --no-startup-id termite -t "htop" -e htop
 exec --no-startup-id termite -t "termite-ws2"
 exec --no-startup-id termite -t "termite-ws4"

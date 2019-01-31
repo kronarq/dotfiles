@@ -64,6 +64,7 @@ export QT_IM_MODULE=ibus
 # else
 #   export EDITOR='mvim'
 # fi
+export EDITOR=vim
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -94,6 +95,7 @@ alias vconf-compton='vim ~/.config/compton.conf'
 alias vconf-termite='vim ~/.config/termite/config'
 alias vconf-polybar='vim ~/.config/polybar/config'
 alias vconf-zsh='vim ~/.zshrc'
+alias virsh='sudo EDITOR=vim virsh'
 
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
