@@ -74,7 +74,7 @@ export TERM="xterm-termite"
 export TERMINAL="termite"
 
 export DEFAULT_USER=kronarq
-export TZ='/usr/share/zoneinfo/America/Phoenix'
+export TZ='/usr/share/zoneinfo/America/Chicago'
 export VISUAL='vim'
 export BROWSER='google-chrome-stable'
 
