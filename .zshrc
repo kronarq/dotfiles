@@ -114,3 +114,8 @@ function cd_up() {
 
 alias 'cd..'='cd_up'                                # can not name function 'cd..'
 
+if [[ $TERM == xterm-termite ]]; then
+  . /etc/profile.d/vte.sh
+  __vte_osc7
+fi
+
